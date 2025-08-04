@@ -1,4 +1,4 @@
-from pydenentic import BaseModel
+from pydantic import BaseModel
 from datetime import datetime
 
 class BookingRequest(BaseModel):
