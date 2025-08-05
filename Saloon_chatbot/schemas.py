@@ -1,12 +1,12 @@
-# schemas.py
 from pydantic import BaseModel
-from datetime import datetime
+from typing import Optional
 
-class BookingRequest(BaseModel):
+class ChatRequest(BaseModel):
     message: str
-    client_name: str = "Guest"
+    client_name: Optional[str] = "Guest"
+    session_id: Optional[str] = None
 
-class BookingResponse(BaseModel):
-    response: str
-
-    
+class ChatResponse(BaseModel):
+    reply: str
+    booking_confirmed: bool
+    session_id: Optional[str] = None
